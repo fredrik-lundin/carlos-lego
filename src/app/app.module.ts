@@ -16,13 +16,6 @@ import { LegoService } from './shared/lego.service';
 import { UpdateContentComponent } from './update-content/update-content.component';
 import { LegoItemComponent } from './lego-item/lego-item.component';
 
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyDtAtCSENqHFDIUW5A4oGAk2xwApN8NNyI',
-//   authDomain: 'lego-bricklink-exporter.firebaseapp.com',
-//   databaseURL: 'https://lego-bricklink-exporter.firebaseio.com',
-//   storageBucket: 'lego-bricklink-exporter.appspot.com',
-// };
-
 @NgModule({
   declarations: [
     AppComponent,
