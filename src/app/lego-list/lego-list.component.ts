@@ -13,7 +13,7 @@ import { MdDialog } from '@angular/material';
       <app-lego-item *ngFor="let item of data | async let i = index"
                      [item]="item"
                      [isAlternateRow]="isAlternateRow(i)"
-                     (click)="openInfoDialog(item)">
+                     (avatarClick)="openInfoDialog(item)">
       </app-lego-item>
     </md-list>
   `,

@@ -1,5 +1,5 @@
 import { LegoItem } from '../shared/lego-item.model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-lego-item',
@@ -9,7 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
         [style.border-left-color]="'#' + item.ColorCode">
         <img md-list-avatar [src]="item.ImageUrl" 
              [style.box-shadow]="'2px 2px 2px #' + item.ColorCode"
-             mdTooltip="Click for more info" [mdTooltipPosition]="'above'">
+             mdTooltip="Click for more info" [mdTooltipPosition]="'above'"
+             (click)="avatarClick.emit(true)">
         <h3 md-line> {{item.Name}} </h3>
         <p md-line>
           <span class="item-property">Color name: </span> {{item.ColorName}} -
@@ -44,6 +45,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LegoItemComponent implements OnInit {
   @Input() item: LegoItem;
   @Input() isAlternateRow: boolean;
+  @Output() avatarClick = new EventEmitter<boolean>();
 
   constructor() { }
 
