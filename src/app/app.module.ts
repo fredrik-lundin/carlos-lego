@@ -7,21 +7,23 @@ import { AngularFireModule } from 'angularfire2';
 import { Routes, RouterModule } from '@angular/router';
 import { firebaseConfig } from './shared/firebase-config';
 
-import { CustomMaterialModule } from './custom-material.module';
-import { AppRoutingModule } from './routes.module';
+import { AppMaterialModule } from './shared-modules/app-material.module';
+import { AppRoutingModule } from './shared-modules/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LegoListComponent } from './lego-list/lego-list.component';
 import { LegoService } from './shared/lego.service';
 import { UpdateContentComponent } from './update-content/update-content.component';
 import { LegoItemComponent } from './lego-item/lego-item.component';
+import { LegoDialogComponent } from './lego-list/lego-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LegoListComponent,
     UpdateContentComponent,
-    LegoItemComponent
+    LegoItemComponent,
+    LegoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +32,9 @@ import { LegoItemComponent } from './lego-item/lego-item.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AppRoutingModule,
-    CustomMaterialModule
+    AppMaterialModule
   ],
+  entryComponents: [LegoDialogComponent],
   providers: [LegoService],
   bootstrap: [AppComponent]
 })
